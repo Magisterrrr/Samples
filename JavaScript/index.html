@@ -1,0 +1,242 @@
+<!DCOTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+	<!--<script src="javascript.js"></script>-->
+	
+	<script type="text/javascript">
+	function changeColor (newColor){
+			var element = document.getElementById("text");
+			element.style.color = newColor;
+		}
+	</script>
+	
+</head>
+<body>
+	<input type="button" inClick=name="b" value="CLICK ON ME!">
+<br><br><br>
+
+	<form name="myForm" action="" onsubmit="return validateForm()" method="post">
+	Name: <input type="text> name="fname">
+	<input type="submit" value="Submit">
+	</form>
+<br>
+
+	<p id="text">Якийсь текст</p>
+	<button onmouseover="changeColor('blue');">Blue</button>
+	<button onclick="changeColor('red');">Red</button>
+	
+<br><br>
+
+	<script>
+		
+		
+		//function validateFor,
+	
+
+		//Функції-------------------------------------
+		document.write("------------------Функції<br>");
+		
+		function write(s) {
+			document.write(s+" ");
+		}
+		
+		function sum(a,b){
+		return(a+b);
+		}
+		
+		write(sum(sum(2,44),350));
+		write("<br><br>");
+		
+		
+		
+		//Обєкти-------------------------------------
+		document.write("------------------Обєкти<br>");
+		
+		function Fruit (color,shape){
+			this.color = color;
+			this.shape = shape;
+		}
+		var lemon = new Fruit('yellow','round');
+		
+		
+		var apple = new Object ();
+		apple.color='green';
+		apple.shape='round';
+		apple.describe = function(){
+		 return 'An apple is ' + this.color;
+		 }
+		write(apple.describe());
+		write("<br>");
+		
+		var person ={
+			firstName: 'Brad',
+			age: 45,
+			children: ['Liza','Olya'],
+			address:{
+				street: 'S.Banderu',
+				city: 'Rivne'
+			},
+			NameAge: function(){
+				return this.firstName + ", age is -" + this.age;
+			}
+		}
+		console.log(person);
+		write(person.firstName);
+		write(person.children[0]);
+		write(person.address.street);
+		write(person.NameAge());
+		write("<br>");
+		write("<br>");
+		
+		
+		//alert confirm, promt-------------------------------------
+	
+		/*if(confirm("Are you sure?")){//вспливаюче вікно з підтвердженням 
+			var strName;
+			strName= prompt("Hi, you press ok. What is your name?");//вспливаюче вікно з полем вводу
+			alert("You press ok! "+strName); //вспливаюче вікно
+		}else alert("You press cancel!");*/
+		
+		
+	
+		//Масиви-------------------------------------
+		document.write("------------------Масиви<br>");
+		
+		var arr = [true, "blue", 12];
+		var colors_1 = Array ("Red", "blue", "Green");
+		colors_1[3]="Grey";
+		colors_1.push("Yellow");
+		for (i = 0; i < colors_1.length; i++){
+		write(colors_1[i]);
+		}
+		document.write("<br>");
+		
+		arr = new Array();
+		for(i=0;i<10;i++){
+		arr.push(i*3);
+		write(arr[i]);
+		}
+		document.write("<br>");
+		var sumArr = 0;
+		for(i=0;i<arr.length;i++){
+			sumArr+=arr[i];
+		}
+		document.write("Sum arr = "+sumArr+" Ser. arfmetuchne = "+(sumArr/arr.length));
+		document.write("<br>");
+		
+		var arr_1 = new Array();
+		var arr_2 = new Array();
+		var arr_3 = new Array();
+		for(var i=0;i<5;i++) arr_1[i]=i;
+		for(var i=0;i<10;i++) arr_2[i]=i;
+		for(var i=0;i<15;i++) arr_3[i]=i;
+		var arr = new Array(arr_1,arr_2,arr_3);
+		document.write(arr[0][4]);
+		document.write("<br>");
+		
+		for(var x=0;x<arr.length;x++){
+			for(var j=0;j<arr[x].length;j++){
+			document.write(arr[x][j]+" ");
+			}
+			document.write("<br>");
+		}
+		document.write("<br><br>");
+		 
+		
+		//цикли-------------------------------------
+		document.write("------------------Цикли<br>");
+		document.write("For<br>");
+		for (var i = 0; i < 20; i+=2){
+		if(i==8) continue;
+		if(i>=12) break;
+		write(i);
+		}
+		document.write("<br>");
+		
+		document.write("While<br>");
+		var i = 0;
+		while(i<=10){
+			write(i);
+			i+=5;
+		}
+		document.write("<br>");
+		
+		document.write("DoWhile<br>");
+		do{
+			write(i);
+			i+=5;
+		}while(i<10);
+		document.write("<br><br>");
+		
+		
+		
+		//Оператори умови-------------------------------------
+		document.write("------------------Оператори умови<br>");
+		if(1 == 1){
+			document.write("1 == 1"+"<br>");
+		}
+		if(1 != 1){
+			document.write("1 != 1"+"<br>");
+		} else document.write("else");
+		document.write("<br>");
+		
+		var sw = 3;
+		switch (sw) {
+			case 1:
+				document.write("sw = "+ sw);
+				break;
+			case 2: 
+				document.write("sw = "+ sw);
+				break;
+			case 3: 
+				document.write("sw = "+ sw);
+				break;
+			default: document.write("WTF?");
+			
+		}
+		document.write("<br>");
+		var x=1,y=2;
+		x>y?document.write("x > y"):document.write("x < y<br>");
+		if(x<y && x==1) document.write("x < y && x==1<br>");
+		if(x>y || x==1) document.write("x > y || x==1<br>");
+		document.write("<br><br>");
+		
+		
+	
+		
+		//мат операції-------------------------------------
+		document.write("------------------Матаматичні операції<br>");
+		var num = 2.1;
+		var srt = "String";
+		var bool = true;
+		var firstNum = 12;
+		var secondNum = 24;
+		firstNum += 12;
+		firstNum++;
+		document.write("Result: ", firstNum + secondNum+"<br><br>");
+		
+		document.write("pi="+Math.PI+"<br>");
+		document.write(Math.ceil(2.32)+"<br>"); 
+		document.write(Math.floor(2.32)+"<br>");
+		document.write(Math.round(2.56)+"<br>");
+		document.write(Math.abs(-2.56)+"<br><br>");
+		
+		var st_n1 ="12";
+		var st_n2 ="13";
+		document.write(Number(st_n1)+Number(st_n2)+"<br><br>");
+		
+		var bool = firstNum==secondNum;
+		document.write(bool+"<br><br>");
+		
+		document.write(7+"%"+3+"="+(7%3));
+		
+		/*comment*/
+		
+		
+		//var name = prompt("Як вас звати?");
+		//console.log("Your name " + name);
+	</script>
+</body>
+</html>
